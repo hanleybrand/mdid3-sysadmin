@@ -32,7 +32,12 @@
 
 <h3>Check the wiki for guides, tips, &amp;c.:  <a href="https://github.com/hanleybrand/mdid3-sysadmin/wiki/_pages">https://github.com/hanleybrand/mdid3-sysadmin/wiki/_pages</a></h3>
 
-<hr><h2>Generic, non-platform specific</h2>
+    <div id="ghWikiPageList">
+
+    </div>
+
+<hr>
+          <h2>Generic, non-platform specific</h2>
 
 <p><a href="https://github.com/hanleybrand/mdid3-sysadmin/wiki/Updating-mdid3-with-git-via-bash">Updating mdid3 with git &amp; bash</a></p>
 
@@ -40,10 +45,12 @@
 
 <p><a href="https://github.com/hanleybrand/mdid3-sysadmin/wiki/Installing-mdid3-on-an-Ubuntu-VM">Installing mdid3 on an Ubuntu VM</a></p>
 
-<h2>Redhat Enterprise Linux 5.8</h2>
+<h2>Redhat Enterprise Linux 5.5</h2>
 
 <p><a href="https://github.com/hanleybrand/mdid3-sysadmin/wiki/Installing-mdid3-on-Redhat-Enterprise-Linux-5.ish">Installing mdid3 on Redhat Enterprise Linux 5.ish</a></p>
       </section>
+
+
       <footer>
         <p>This project is maintained by <a href="https://github.com/hanleybrand">hanleybrand</a></p>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
@@ -51,6 +58,25 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="javascripts/scale.fix.js"></script>
-    
+
+    <script>
+
+        var m3sa = {
+            getWikiPages: function(){
+                $('#result').load('https://github.com/hanleybrand/mdid3-sysadmin/wiki/_pages #wiki-content', function(response){
+                    $('#ghWikiPageList').append(response);
+                });
+            },
+            myVariables: 'list is done'
+        };
+
+        $(function(){
+
+            m3sa.getWikiPages();
+
+        });
+
+    </script>
+
   </body>
 </html>
