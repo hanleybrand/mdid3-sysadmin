@@ -4,7 +4,7 @@ Redhat Enterprise 5 is about stability, which is great - except almost nothing u
 
 So 
 
-Assuming [EPEL](https://fedoraproject.org/wiki/EPEL) is not configured, enable it
+Assuming [EPEL](https://fedoraproject.org/wiki/EPEL) is not configured, enable it ([slightly deeper tutorial](http://linuxmoz.com/centos-epel-repo-install-tutorial/))
 
     sudo rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 
@@ -55,7 +55,12 @@ Alternatively, you can do them all at once:
 ### If you're installing sql on the same server
     sudo yum install mysql-server -y  
 
+
 ### (interlude) Configure easy_install for use with Python26
+
+<span style="background-color:#ff3434; border: 1px solid #ccc; font-size: 13px; line-height: 19px; overflow: auto; padding: 6px 10px; border-radius: 3px;">
+**Note: some of the problems this section describes can also be circumvented by [using a virtual environment](virtualenv%3A--for-the-better)**
+</span>
 
 As of this writing, if you install python26 from the Chris Lea repo, the command line easy_install will execute easy_install for Python 2.4 instead of 2.6, which is useless because Python 2.6 can't see libraries installed for 2.4 unless you muck about with links, and I don't think that's the greatest idea, unless you're more comfortable with centos/unix/multiple python installs than I am, in which case I don't know if you are reading this anyway. 
 
@@ -86,6 +91,7 @@ Then
 or 
 
     easy26 python-ldap mysql-python pil python-dateutil flickrapi werkzeug reportlab
+
 
 
 ### (optional) Set up some aliases for command line ease
